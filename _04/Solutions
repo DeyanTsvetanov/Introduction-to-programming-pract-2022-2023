@@ -1,0 +1,202 @@
+Exercise 1
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int number ;
+    cout << "Enter numbers: ";
+    int sum = 0 ;
+    do
+    {
+        cin >> number ;
+        sum = sum + number ;
+    }
+    while ( number != 0 ) ;
+    cout << "Your result is: " << sum << endl ;
+    
+    return 0;
+}
+
+
+Exercise 2
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int number1 ;
+    int number2 ; 
+    cout << "Enter 2 numbers: " ;
+    cin >> number1 ;
+    cin >> number2 ;
+
+    if ( number1 >= number2 )
+    {
+        int i = number2 ;
+        while ( i != 0 )
+        {
+            if (( number1 % i == 0 ) && ( number2 % i == 0 ))
+            cout << i << " " ;
+            i--;
+        }
+    }
+    else
+    {
+        int i = number1 ;
+        while ( i != 0 )
+        {
+            if (( number1 % i == 0 ) && ( number2 % i == 0 ))
+            cout << i << " " ;
+            i--;
+        }
+    }
+
+    return 0;
+}
+
+
+Exercise 3
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main ()
+{
+    int number ;
+    int tempNumber;
+    int numberCounter = 0;
+    int middleNumberCounter = 0;
+    int secondMiddleNumberCounter = 0;
+    int digitsAfterMiddleDigit = 0;
+    int firstDigits = 0;
+    int lastDigits = 0;
+
+    cout << "Enter a number: ";
+    cin >> number ;
+    tempNumber = number;
+    
+    // devide the number until it reaches 0
+    // add counter which add 1 for every time the number is devided by 10
+    while ( tempNumber !=0 )
+    {
+        tempNumber = tempNumber / 10;
+        numberCounter = numberCounter + 1;
+    }
+    
+    // number % 2 == 0 -- even , devide counter by 2 and by 2+1
+    middleNumberCounter = numberCounter / 2 + 1;
+    digitsAfterMiddleDigit = numberCounter - middleNumberCounter;
+        
+    // find digits until middle digit
+    firstDigits = number / pow ( 10 , middleNumberCounter );   
+    cout << "Digits before middle digit " << firstDigits << endl; 
+    
+    int finder = pow ( 10 , digitsAfterMiddleDigit );
+    lastDigits = number % finder;
+    cout << "Digits after middle digit " << lastDigits << endl;
+
+    if ( firstDigits == 0 )
+    {
+        cout << "Your result is: "<< lastDigits << "," << lastDigits + 1 << endl;
+    }
+    else
+    {
+        cout << "Your result is: " << firstDigits << lastDigits << "," << firstDigits 
+        << lastDigits + 1 << endl;
+    
+    }
+    return 1;
+}
+
+
+Exercise 4
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int number1 ;
+    int number2 ;
+    cout << "Enter two numbers: " ;
+    cin >> number1 ; 
+    cin >> number2 ;
+    
+    if ( number1 % 2 == 0 )
+    { 
+        number1 = number + 1 ;
+    }
+        while ( number2 >= number1 )
+        {
+            if ( number1 % 2 == 0 && number1 < number2 ) 
+            {
+                cout << " " ;
+                number1 = number1 + 1;
+            }
+            else
+            {
+                cout << number1 << " " ;
+                number1 = number + 1 ;
+            }
+        
+        }
+
+    return 0;
+}
+
+
+Exercise 5 
+
+#include <iostream>
+using namespace std;
+int main ()
+{
+    int number ;
+    cout << "Enter a number: " ;
+    cin >> number ;
+    if ( number % 2 == 0 )
+    {
+        while ( number % 2 == 0 )
+        {
+            number = number / 2 ;
+            if ( number == 1 )
+            {
+                cout << "True " << endl ;   
+            }
+            else 
+            { 
+                cout << "False" << endl ; 
+                break;
+            }
+        }
+    }
+    else
+    {
+        cout << "False " << endl ;
+    }
+   
+    return 0;
+}
+
+
+Exercise 6
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main ()
+{
+    int a , b , c , d , e;
+    cout << "Enter numbers: ";
+    cin >> a >> b >> c >> d >> e;
+    for ( int x = -100 ; x <= 100; x++ )
+    {
+        int sum = a*pow(x,4) + b*pow(x,3) + c*pow(x,2) + d*x + e;
+        if ( sum >= 0 )
+        {
+            cout << x << " ";
+        }
+    }
+   
+    return 0;
+}
